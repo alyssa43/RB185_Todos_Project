@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     base64 (0.2.0)
-    erubis (2.7.0)
+    erubi (1.13.1)
     logger (1.7.0)
     multi_json (1.15.0)
     mustermann (3.0.3)
@@ -41,7 +41,7 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
-  erubis
+  erubi
   pg
   puma
   sinatra

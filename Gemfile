@@ -2,12 +2,12 @@ source "https://rubygems.org"
 
 gem "sinatra"
 gem "sinatra-contrib"
-gem "erubis"
+gem "erubi"
 gem "webrick"
-gem "puma"
+gem "pg"
 
 group :production do
-  gem  "pg"
+  gem  "puma"
 end
 
 ruby "3.2.2"
