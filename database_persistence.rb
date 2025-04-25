@@ -35,17 +35,18 @@ class DatabasePersistence
   end
 
   def create_new_list(list_name)
-    # id = next_element_id(@session[:lists])
-    # @session[:lists] << { id: id, name: list_name, todos: [] }
+    sql = "INSERT INTO lists (name) VALUES ($1)"
+    query(sql, list_name)
   end
 
   def delete_list(id)
-    # @session[:lists].reject! { |list| list[:id] == id }
+    query("DELETE FROM todos WHERE list_id = $1", id)
+    query("DELETE FROM lists WHERE id = $1", id)
   end
 
   def update_list_name(id, new_name)
-    # list = find_list(id)
-    # list[:name] = new_name
+    sql = "UPDATE lists SET name = $1 WHERE id = $2"
+    query(sql, new_name, id)
   end
 
   def create_new_todo(list_id, todo_name)
