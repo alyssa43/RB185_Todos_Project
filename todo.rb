@@ -2,7 +2,7 @@ require "sinatra"
 require "sinatra/reloader"
 require "sinatra/content_for"
 require "tilt/erubi"
-
+require "pry"
 require_relative "database_persistence"
 
 configure do
@@ -68,7 +68,7 @@ def error_for_todo(name)
 end
 
 before do
-  @storage = DatabasePersistence.new
+  @storage = DatabasePersistence.new(logger)
 end
 
 get "/" do
